@@ -15,7 +15,7 @@ const Post = (props: Props) => {
           <img className="w-10 h-10 rounded-full mr-2" src="https://via.placeholder.com/150" alt="User Avatar" />
           <div>
             <h2 className="font-semibold text-md">{post.author?.username}</h2>
-            <p className="text-gray-500 text-sm">{post.createdAt}</p>
+            <p className="text-gray-500 text-sm">{post.createAt}</p>
           </div>
         </div>
         <p className="text-gray-700">{post.content}</p>
