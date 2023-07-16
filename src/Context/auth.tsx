@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const login = async (token: string) => {
     localStorage.setItem("auth_token", token);
-    apiClient.defaults.headers["Authorization"] = `Bearer ${token}`;
+    apiClient.defaults.headers["Authorization"] = `Bearer ${token}`;//セットしないと以前のユーザのままになる。
 
     try {
       apiClient.get("/users/find").then((res) => {

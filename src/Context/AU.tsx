@@ -41,7 +41,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       apiClient
         .get("/users/find")
         .then((res) => {
-          // console.log(res.data.user);
           setUser(res.data.user);
         })
         .catch((err) => {
