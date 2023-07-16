@@ -22,7 +22,7 @@ const Timeline = () => {
   };
 
   useEffect(() => {
-    const fetchLetastPosts = async () => {
+    const fetchLatestPosts = async () => {
       try {
         const response = await apiClient.get("/posts/get_latest_post");
         setLatestPosts(response.data);
@@ -31,7 +31,7 @@ const Timeline = () => {
       }
     };
 
-    fetchLetastPosts();
+    fetchLatestPosts();
   }, []);
 
   return (
@@ -42,7 +42,9 @@ const Timeline = () => {
             <textarea
               className="w-full h-24 p-2 border border-gray-300 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
               placeholder="What's on your mind?"
-              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setPostText(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                setPostText(e.target.value)
+              }
               value={postText}
             ></textarea>
             <button
